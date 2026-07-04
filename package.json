@@ -1,0 +1,11 @@
+{
+  "name": "priority-web",
+  "version": "1.0.0",
+  "description": "Sitio web de Priority Asesores de Seguros",
+  "scripts": {
+    "start": "npx serve . -l $PORT"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}
