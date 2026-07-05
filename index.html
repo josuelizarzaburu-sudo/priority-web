@@ -73,12 +73,25 @@
   .hero-center{max-width:860px;margin:0 auto;text-align:center}
   .hero-center h1{font-size:52px;color:var(--navy);margin-bottom:20px;letter-spacing:-.5px}
   .hero-center h1 em{font-style:italic;color:var(--gold)}
-  .hero-center .lead{font-size:19px;color:var(--slate);margin:0 auto 38px;max-width:540px}
-  .seguro-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:30px}
-  .seg-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:100px;padding:15px 28px;font-size:17px;font-weight:600;color:var(--navy);text-decoration:none;transition:all .22s;box-shadow:0 4px 14px rgba(12,32,87,.05)}
-  .seg-btn .se{font-size:22px}
-  .seg-btn:hover{border-color:var(--gold);background:var(--navy);color:#fff;transform:translateY(-4px);box-shadow:0 14px 30px rgba(12,32,87,.2)}
-  @media(max-width:720px){.hero-center h1{font-size:34px}.seg-btn{padding:13px 22px;font-size:15px}}
+  .hero-center .lead{font-size:19px;color:var(--slate);margin:0 auto 14px;max-width:540px}
+  .seguro-hint{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--gold-2);margin:0 auto 34px;background:#fff;border:1px solid var(--line);padding:8px 18px;border-radius:100px}
+  .seguro-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:760px;margin:0 auto 30px}
+  .seg-btn{display:flex;flex-direction:column;align-items:center;text-align:center;gap:0;background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 20px 24px;text-decoration:none;color:var(--navy);transition:transform .28s cubic-bezier(.34,1.56,.64,1),box-shadow .28s,border-color .28s;position:relative;overflow:hidden}
+  .seg-ico{width:72px;height:72px;margin-bottom:16px;display:flex;align-items:center;justify-content:center}
+  .seg-ico svg{width:100%;height:100%;overflow:visible}
+  .seg-ico svg .stroke{fill:none;stroke:var(--navy);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;transition:stroke .28s}
+  .seg-ico svg .accent{fill:var(--gold);transition:fill .28s,transform .28s;transform-origin:center}
+  .seg-ico svg .accent-stroke{fill:none;stroke:var(--gold);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+  .seg-btn .seg-name{font-size:20px;font-weight:600;font-family:'Fraunces',serif;margin-bottom:8px}
+  .seg-btn .seg-go{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--slate);transition:gap .25s,color .25s}
+  .seg-btn .seg-go .arw{transition:transform .25s}
+  .seg-btn:hover{transform:translateY(-8px);box-shadow:0 22px 44px rgba(12,32,87,.16);border-color:var(--gold)}
+  .seg-btn:hover .seg-go{gap:11px;color:var(--gold-2)}
+  .seg-btn:hover .seg-go .arw{transform:translateX(4px)}
+  .seg-btn:hover .seg-ico svg .accent{transform:scale(1.18)}
+  .seg-btn:hover .seg-ico .float{animation:floaty .6s ease}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+  @media(max-width:720px){.hero-center h1{font-size:34px}.seguro-btns{grid-template-columns:1fr 1fr;gap:12px}.seg-btn{padding:22px 14px 18px}.seg-ico{width:56px;height:56px}.seg-btn .seg-name{font-size:17px}}
 
   /* CRED BAR */
   .creds{background:var(--navy);color:#fff;padding:40px 0}
@@ -130,7 +143,11 @@
   .val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .val{padding:34px;border:1px solid var(--line);border-radius:18px;transition:border-color .25s,transform .25s;background:#fff}
   .val:hover{border-color:var(--gold);transform:translateY(-4px)}
-  .val .vic{width:54px;height:54px;border-radius:14px;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:18px}
+  .val .vic{width:56px;height:56px;border-radius:14px;background:var(--cream);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .val .vic svg{width:30px;height:30px;overflow:visible}
+  .val .vic svg .st{fill:none;stroke:var(--navy);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+  .val .vic svg .ac{fill:none;stroke:var(--gold);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+  .val .vic svg .acf{fill:var(--gold)}
   .val h4{font-size:23px;color:var(--navy);margin-bottom:10px}
   .val p{color:var(--slate);font-size:16.5px}
   @media(max-width:900px){.val-grid{grid-template-columns:1fr 1fr}}
@@ -205,12 +222,36 @@
     <h1>Miles de clientes nos prefieren como asesores de seguros por nuestro <em>servicio Priority</em>.</h1>
     <p class="lead">Elige el seguro que quieres cotizar y déjanos el resto a nosotros.</p>
     <div class="seguro-btns">
-      <a href="salud.html" class="seg-btn"><span class="se">🏥</span> Salud</a>
-      <a href="vehiculo.html" class="seg-btn"><span class="se">🚗</span> Vehículo</a>
-      <a href="https://wa.me/593995915761?text=Hola,%20quiero%20cotizar%20un%20seguro%20de%20hogar" class="seg-btn"><span class="se">🏠</span> Hogar</a>
-      <a href="https://wa.me/593995915761?text=Hola,%20quiero%20cotizar%20un%20seguro%20de%20viajes" class="seg-btn"><span class="se">✈️</span> Viajes</a>
-      <a href="https://wa.me/593995915761?text=Hola,%20quiero%20cotizar%20un%20seguro%20de%20dental" class="seg-btn"><span class="se">🦷</span> Dental</a>
-      <a href="https://wa.me/593995915761?text=Hola,%20quiero%20cotizar%20un%20seguro%20de%20vida" class="seg-btn"><span class="se">🛡️</span> Vida</a>
+      <a href="salud.html" class="seg-btn">
+        <span class="seg-ico"><svg viewBox="0 0 64 64"><path class="stroke" d="M32 56C32 56 8 42 8 24C8 15 14 10 21 10C26 10 30 13 32 17C34 13 38 10 43 10C50 10 56 15 56 24C56 42 32 56 32 56Z"/><path class="accent-stroke" d="M32 27V39M26 33H38"/></svg></span>
+        <span class="seg-name">Salud</span>
+        <span class="seg-go">Cotizar <span class="arw">→</span></span>
+      </a>
+      <a href="vehiculo.html" class="seg-btn">
+        <span class="seg-ico"><svg viewBox="0 0 64 64"><path class="stroke" d="M10 40V33L16 20C17 17 19 16 22 16H42C45 16 47 17 48 20L54 33V40"/><path class="stroke" d="M8 40H56V46C56 47 55 48 54 48H50C49 48 48 47 48 46V43H16V46C16 47 15 48 14 48H10C9 48 8 47 8 46Z"/><circle class="accent" cx="18" cy="40" r="4"/><circle class="accent" cx="46" cy="40" r="4"/></svg></span>
+        <span class="seg-name">Vehículo</span>
+        <span class="seg-go">Cotizar <span class="arw">→</span></span>
+      </a>
+      <a href="https://wa.me/593995915761?text=Hola,%20quiero%20cotizar%20un%20seguro%20de%20hogar" class="seg-btn">
+        <span class="seg-ico"><svg viewBox="0 0 64 64"><path class="stroke" d="M10 30L32 12L54 30"/><path class="stroke" d="M16 26V50C16 51 17 52 18 52H46C47 52 48 51 48 50V26"/><path class="accent-stroke" d="M27 52V38H37V52"/></svg></span>
+        <span class="seg-name">Hogar</span>
+        <span class="seg-go">Cotizar <span class="arw">→</span></span>
+      </a>
+      <a href="https://wa.me/593995915761?text=Hola,%20quiero%20cotizar%20un%20seguro%20de%20viajes" class="seg-btn">
+        <span class="seg-ico"><svg viewBox="0 0 64 64"><path class="stroke float" d="M52 34L12 30L8 22L14 23L18 28L30 29L22 14L28 15L40 30L50 31C53 31 55 32 55 34C55 35 54 34 52 34Z"/><path class="accent-stroke" d="M20 44H44"/></svg></span>
+        <span class="seg-name">Viajes</span>
+        <span class="seg-go">Cotizar <span class="arw">→</span></span>
+      </a>
+      <a href="https://wa.me/593995915761?text=Hola,%20quiero%20cotizar%20un%20seguro%20de%20dental" class="seg-btn">
+        <span class="seg-ico"><svg viewBox="0 0 64 64"><path class="stroke" d="M32 14C24 10 14 12 14 24C14 34 18 52 23 52C27 52 26 40 32 40C38 40 37 52 41 52C46 52 50 34 50 24C50 12 40 10 32 14Z"/><path class="accent-stroke" d="M25 22C27 20 30 20 32 21"/></svg></span>
+        <span class="seg-name">Dental</span>
+        <span class="seg-go">Cotizar <span class="arw">→</span></span>
+      </a>
+      <a href="https://wa.me/593995915761?text=Hola,%20quiero%20cotizar%20un%20seguro%20de%20vida" class="seg-btn">
+        <span class="seg-ico"><svg viewBox="0 0 64 64"><path class="stroke" d="M32 54C32 54 10 40 10 24C10 16 15 11 22 11C27 11 31 14 32 18C33 14 37 11 42 11C49 11 54 16 54 24C54 40 32 54 32 54Z"/><path class="accent-stroke" d="M16 32H26L29 26L33 38L37 30L39 32H48"/></svg></span>
+        <span class="seg-name">Vida</span>
+        <span class="seg-go">Cotizar <span class="arw">→</span></span>
+      </a>
     </div>
     <div class="hero-mini" style="justify-content:center;margin-top:10px">
       <div class="m"><span>✓</span> Sin costo ni compromiso</div>
@@ -255,12 +296,12 @@
       <h2>Seis pilares, una sola promesa</h2>
     </div>
     <div class="val-grid">
-      <div class="val"><div class="vic">🤝</div><h4>Confianza</h4><p>Te recomendamos lo que necesitas, no lo que más comisión deja.</p></div>
-      <div class="val"><div class="vic">💙</div><h4>Acompañamiento</h4><p>Presentes en el día a día, no solo en el momento de la venta.</p></div>
-      <div class="val"><div class="vic">✨</div><h4>Honestidad</h4><p>Sin engaños, sin letra pequeña, sin sorpresas desagradables.</p></div>
-      <div class="val"><div class="vic">🫶</div><h4>Empatía</h4><p>Nos ponemos en tu lugar, incluso en los casos más difíciles.</p></div>
-      <div class="val"><div class="vic">🔍</div><h4>Atención al detalle</h4><p>Gestionamos cada documento para que nada se caiga.</p></div>
-      <div class="val"><div class="vic">⭐</div><h4>Casos extraordinarios</h4><p>Resolvemos lo que otros brokers no quieren ni tocar.</p></div>
+      <div class="val"><div class="vic"><svg viewBox="0 0 64 64"><path class="st" d="M32 12L50 20V32C50 43 42 50 32 53C22 50 14 43 14 32V20Z"/><path class="ac" d="M25 32L30 37L40 26"/></svg></div><h4>Confianza</h4><p>Te recomendamos lo que necesitas, no lo que más comisión deja.</p></div>
+      <div class="val"><div class="vic"><svg viewBox="0 0 64 64"><circle class="st" cx="23" cy="22" r="7"/><circle class="ac" cx="42" cy="24" r="6"/><path class="st" d="M12 50C12 40 17 35 23 35C29 35 34 40 34 50"/><path class="ac" d="M34 48C34 40 38 36 43 36C48 36 52 40 52 48"/></svg></div><h4>Acompañamiento</h4><p>Presentes en el día a día, no solo en el momento de la venta.</p></div>
+      <div class="val"><div class="vic"><svg viewBox="0 0 64 64"><path class="st" d="M6 32C6 32 16 18 32 18C48 18 58 32 58 32C58 32 48 46 32 46C16 46 6 32 6 32Z"/><circle class="acf" cx="32" cy="32" r="7"/></svg></div><h4>Honestidad</h4><p>Sin engaños, sin letra pequeña, sin sorpresas desagradables.</p></div>
+      <div class="val"><div class="vic"><svg viewBox="0 0 64 64"><path class="st" d="M14 40C14 40 10 30 18 28C24 26.5 26 34 26 34"/><path class="ac" d="M44 52C44 52 30 44 30 33C30 27 34 24 38 24C41 24 43 26 44 29C45 26 47 24 50 24C54 24 58 27 58 33C58 44 44 52 44 52Z"/></svg></div><h4>Empatía</h4><p>Nos ponemos en tu lugar, incluso en los casos más difíciles.</p></div>
+      <div class="val"><div class="vic"><svg viewBox="0 0 64 64"><circle class="st" cx="28" cy="28" r="14"/><path class="ac" d="M38 38L50 50"/></svg></div><h4>Atención al detalle</h4><p>Gestionamos cada documento para que nada se caiga.</p></div>
+      <div class="val"><div class="vic"><svg viewBox="0 0 64 64"><path class="st" d="M32 12L38 24L51 26L42 36L44 49L32 43L20 49L22 36L13 26L26 24Z"/><circle class="acf" cx="32" cy="31" r="5"/></svg></div><h4>Casos extraordinarios</h4><p>Resolvemos lo que otros brokers no quieren ni tocar.</p></div>
     </div>
   </div>
 </section>
