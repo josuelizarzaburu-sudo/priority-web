@@ -120,6 +120,13 @@
   footer a:hover{color:var(--gold)}
   .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;font-size:13px;text-align:center}
   @media(max-width:720px){.foot-grid{grid-template-columns:1fr 1fr}}
+
+  .svg-ico{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle}
+  .svg-ico svg{width:100%;height:100%;overflow:visible}
+  .svg-ico svg .st{fill:none;stroke:currentColor;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+  .svg-ico svg .ac{fill:none;stroke:var(--gold);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+  .ins-flag .svg-ico{width:15px;height:15px;margin-right:2px}
+
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -164,7 +171,7 @@
       <div class="ins-card c-bmi">
         <div class="ins-head">
           <span class="ins-name">BMI</span>
-          <span class="ins-flag">🌎 Internacional</span>
+          <span class="ins-flag"><span class="svg-ico"><svg viewBox="0 0 24 24"><circle class="st" cx="12" cy="12" r="9"/><path class="st" d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span> Internacional</span>
         </div>
         <div class="ins-tagline">Cobertura mundial, sin fronteras</div>
         <ul class="ins-feats">
@@ -182,7 +189,7 @@
       <div class="ins-card c-humana">
         <div class="ins-head">
           <span class="ins-name">Humana</span>
-          <span class="ins-flag">🏥 Red Metropolitano</span>
+          <span class="ins-flag"><span class="svg-ico"><svg viewBox="0 0 24 24"><path class="st" d="M5 21V6l7-3 7 3v15"/><path class="ac" d="M12 9v6M9 12h6"/></svg></span> Red Metropolitano</span>
         </div>
         <div class="ins-tagline">La red médica más amplia del país</div>
         <ul class="ins-feats">
@@ -200,7 +207,7 @@
       <div class="ins-card c-ecua">
         <div class="ins-head">
           <span class="ins-name">Ecuasanitas</span>
-          <span class="ins-flag">⭐ Pionera</span>
+          <span class="ins-flag"><span class="svg-ico"><svg viewBox="0 0 24 24"><path class="st" d="M12 3l2.5 5 5.5.8-4 4 1 5.5-5-2.7-5 2.7 1-5.5-4-4 5.5-.8z"/></svg></span> Pionera</span>
         </div>
         <div class="ins-tagline">Centros médicos propios y ahorro extra</div>
         <ul class="ins-feats">
@@ -218,7 +225,7 @@
       <div class="ins-card c-bupa">
         <div class="ins-head">
           <span class="ins-name">Bupa</span>
-          <span class="ins-flag">🌐 Global</span>
+          <span class="ins-flag"><span class="svg-ico"><svg viewBox="0 0 24 24"><circle class="st" cx="12" cy="12" r="9"/><path class="st" d="M3 9h18M3 15h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span> Global</span>
         </div>
         <div class="ins-tagline">Salud premium con alcance internacional</div>
         <ul class="ins-feats">
@@ -284,7 +291,7 @@
           </select>
         </div>
         <button type="submit" class="btn-gold">Quiero mi cotización →</button>
-        <p class="form-note">🔒 Tus datos están seguros. Un asesor te contacta hoy mismo.</p>
+        <p class="form-note"><span class="svg-ico" style="width:13px;height:13px;color:var(--slate)"><svg viewBox="0 0 24 24"><rect class="st" x="5" y="11" width="14" height="9" rx="2" style="stroke-width:2"/><path class="ac" d="M8 11V8a4 4 0 018 0v3" style="stroke-width:2"/></svg></span> Tus datos están seguros. Un asesor te contacta hoy mismo.</p>
       </form>
     </div>
   </div>
@@ -319,7 +326,7 @@
       <div class="frow"><label>Celular / WhatsApp</label><input name="phone" required placeholder="09xxxxxxxx"></div>
       <input type="hidden" name="insurer" id="modalInsurer" value="">
       <button type="submit" class="btn-gold" style="width:100%;margin-top:8px;padding:16px">Quiero mi cotización →</button>
-      <p class="form-note">🔒 Tus datos están seguros. Un asesor te contacta hoy mismo.</p>
+      <p class="form-note"><span class="svg-ico" style="width:13px;height:13px;color:var(--slate)"><svg viewBox="0 0 24 24"><rect class="st" x="5" y="11" width="14" height="9" rx="2" style="stroke-width:2"/><path class="ac" d="M8 11V8a4 4 0 018 0v3" style="stroke-width:2"/></svg></span> Tus datos están seguros. Un asesor te contacta hoy mismo.</p>
     </form>
   </div>
 </div>
@@ -358,7 +365,7 @@
     return false;
   }
   function done(f){
-    f.innerHTML = '<div style="text-align:center;padding:30px 10px"><div style="font-size:52px;margin-bottom:14px">✅</div><h3 style="color:#0C2057;font-size:24px;margin-bottom:8px">¡Listo!</h3><p style="color:#5A6478">Un asesor te contacta hoy mismo. Gracias por confiar en Priority.</p></div>';
+    f.innerHTML = '<div style="text-align:center;padding:30px 10px"><div style="margin-bottom:14px"><span class="svg-ico" style="width:56px;height:56px"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" style="fill:var(--gold)"/><path d="M22 33l7 7 14-15" style="fill:none;stroke:#0C2057;stroke-width:5;stroke-linecap:round;stroke-linejoin:round"/></svg></span></div><h3 style="color:#0C2057;font-size:24px;margin-bottom:8px">¡Listo!</h3><p style="color:#5A6478">Un asesor te contacta hoy mismo. Gracias por confiar en Priority.</p></div>';
   }
 </script>
 </body>
