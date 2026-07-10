@@ -1,5 +1,5 @@
 (function() {
-  var CRM = 'https://priority-crm-production.up.railway.app';
+  var CRM = 'https://priority-crm-production.up.railway.app'; // v2
   var messages = [];
   var isOpen = false;
   var isTyping = false;
@@ -132,7 +132,7 @@
     isTyping = true;
     showTyping();
 
-    fetch(CRM + '/api/chat', {
+    fetch(CRM + '/api/v1/chat', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({messages: messages.slice(-14)})
