@@ -3,6 +3,17 @@
   var messages = [];
   var isOpen = false;
   var isTyping = false;
+  var sessionId = (function(){
+    try {
+      var existing = sessionStorage.getItem('prio-chat-session');
+      if (existing) return existing;
+      var id = (crypto && crypto.randomUUID) ? crypto.randomUUID() : ('s-' + Date.now() + '-' + Math.random().toString(36).slice(2));
+      sessionStorage.setItem('prio-chat-session', id);
+      return id;
+    } catch(e) {
+      return 's-' + Date.now() + '-' + Math.random().toString(36).slice(2);
+    }
+  })();
 
   // CSS
   var style = document.createElement('style');
@@ -135,7 +146,7 @@
     fetch(CRM + '/api/v1/chat', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({messages: messages.slice(-14)})
+      body:JSON.stringify({messages: messages.slice(-14), sessionId: sessionId})
     })
     .then(function(r){ return r.json(); })
     .then(function(d){
