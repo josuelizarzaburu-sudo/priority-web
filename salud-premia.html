@@ -499,6 +499,15 @@
     document.getElementById('heroTitle').innerHTML = d.title;
     document.getElementById('heroLead').textContent = d.lead;
     document.getElementById('hero').className = 'hero '+d.theme;
+    // Personalizar links de WhatsApp según el perfil de la encuesta
+    var WA_MSGS = {
+      A: 'Hola! Vengo de Vitality 💪 Hago deporte y ya tengo seguro de salud. Quiero saber cómo me pueden premiar',
+      B: 'Hola! Vengo de Vitality. Ya tengo seguro de salud y quiero saber cómo recibir dinero de vuelta por cuidarme',
+      C: 'Hola! Vengo de Vitality 💪 Hago deporte pero aún no tengo seguro de salud. Quiero protección que me premie',
+      D: 'Hola! Vengo de Vitality. Aún no tengo seguro y quiero empezar a cuidarme con un plan que me premie'
+    };
+    var waUrl = 'https://wa.me/593995915761?text=' + encodeURIComponent(WA_MSGS[p] || WA_MSGS.D);
+    document.querySelectorAll('a[href*="wa.me/593995915761"]').forEach(function(a){ a.href = waUrl; });
     // beneficios
     var bg = document.getElementById('benefitsGrid');
     bg.innerHTML = d.benefits.map(function(b){
