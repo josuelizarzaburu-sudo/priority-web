@@ -50,7 +50,7 @@
   .hero-img-container{position:relative;width:100%;max-height:620px;overflow:hidden}
   .hero-img-real{width:100%;height:auto;min-height:620px;object-fit:cover;object-position:center 20%;display:block}
   .hero-img-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,14,45,.70) 0%,rgba(5,14,45,.40) 100%)}
-  .hero-over{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;padding:48px 24px 32px;color:#fff}
+  .hero-over{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px 24px;color:#fff}
   .hero-wrap h1,.hero-over h1{color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.5)}
   .hero-wrap h1 em,.hero-over h1 em{color:#DBAA59}
   .hero-wrap .lead,.hero-over .lead{color:rgba(255,255,255,.9);text-shadow:0 1px 8px rgba(0,0,0,.4)}
@@ -133,10 +133,10 @@
   @media(max-width:720px){.hero-center h1{font-size:34px}.seguro-btns{grid-template-columns:1fr 1fr;gap:12px}.seg-btn{padding:22px 14px 18px}.seg-ico{width:56px;height:56px}.seg-btn .seg-name{font-size:17px}}
 
   /* CRED BAR */
-  .creds{background:var(--navy);color:#fff;padding:50px 0}
+  .creds{background:#fff;color:var(--navy);padding:50px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .creds-in{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
-  .cv{font-family:'Poppins',sans-serif;font-size:42px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:8px}
-  .cl{font-size:14px;color:rgba(255,255,255,.75);font-weight:400}
+  .cv{font-family:'Poppins',sans-serif;font-size:42px;font-weight:700;color:var(--gold-2);line-height:1;margin-bottom:8px}
+  .cl{font-size:14px;color:var(--slate);font-weight:400}
   .cred b{display:block;font-family:'Poppins',sans-serif;font-size:40px;font-weight:600;color:var(--gold);line-height:1}
   .cred span{font-size:14px;color:rgba(255,255,255,.72);margin-top:6px;display:block}
   @media(max-width:720px){.creds-in{grid-template-columns:1fr 1fr;gap:30px}}
@@ -217,12 +217,6 @@
   .testi-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.25);border:none;padding:0;cursor:pointer;transition:background .25s,transform .25s}
   .testi-dot.active{background:var(--gold);transform:scale(1.25)}
   @media(max-width:720px){.testi-slide .q{font-size:16px}.testi-rot{padding:24px 0}}
-  .stats-sec{background:#fff;padding:40px 0;border-bottom:1px solid var(--line)}
-  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:900px;margin:0 auto}
-  .stat-item{text-align:center}
-  .stat-num{font-family:'Poppins',sans-serif;font-size:34px;font-weight:700;color:var(--navy);letter-spacing:-.5px}
-  .stat-lbl{font-size:13px;color:var(--slate);margin-top:4px}
-  @media(max-width:720px){.stats-grid{grid-template-columns:1fr 1fr;gap:20px}.stat-num{font-size:28px}}
 
   /* PARTNERS */
   .partners{text-align:center;padding:64px 0;border-top:1px solid var(--line)}
@@ -414,16 +408,6 @@
       <div class="val"><div class="vic"><svg viewBox="0 0 64 64"><circle class="st" cx="28" cy="28" r="14"/><path class="ac" d="M38 38L50 50"/></svg></div><h4>Atención al detalle</h4><p>Gestionamos cada documento para que nada se caiga.</p></div>
       <div class="val"><div class="vic"><svg viewBox="0 0 64 64"><path class="st" d="M32 12L38 24L51 26L42 36L44 49L32 43L20 49L22 36L13 26L26 24Z"/><circle class="acf" cx="32" cy="31" r="5"/></svg></div><h4>Casos extraordinarios</h4><p>Resolvemos lo que otros brokers no quieren ni tocar.</p></div>
     </div>
-  </div>
-</section>
-
-<!-- ══════════ ESTADÍSTICAS (contenido de ejemplo — reemplazar con datos reales) ══════════ -->
-<section class="stats-sec">
-  <div class="wrap stats-grid">
-    <div class="stat-item"><div class="stat-num">+10.000</div><div class="stat-lbl">Clientes protegidos</div></div>
-    <div class="stat-item"><div class="stat-num">+15</div><div class="stat-lbl">Aseguradoras aliadas</div></div>
-    <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-lbl">Soporte cuando lo necesitas</div></div>
-    <div class="stat-item"><div class="stat-num">98%</div><div class="stat-lbl">Clientes satisfechos</div></div>
   </div>
 </section>
 
