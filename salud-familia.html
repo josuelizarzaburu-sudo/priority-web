@@ -144,8 +144,8 @@
 </head>
 <style>
 /* HERO CON FOTO */
-.hero-f{position:relative;overflow:hidden;background-color:#0C2057}
-.hero-f-bg{width:100%;height:auto;display:block}
+.hero-f{position:relative;overflow:hidden;background-color:#0C2057;min-height:600px}
+.hero-f-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-f-content{position:absolute;top:0;right:0;bottom:0;width:52%;display:flex;flex-direction:column;justify-content:center;padding:40px 48px 40px 20px;background:linear-gradient(to right,transparent 0%,rgba(5,14,45,.55) 30%,rgba(5,14,45,.75) 100%)}
 .hero-f-content .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:7px 16px;font-size:12px;font-weight:600;color:#fff;margin-bottom:18px;width:fit-content}
 .hero-f-content .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
@@ -184,20 +184,18 @@
 .red-ck{width:18px;height:18px;border-radius:50%;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0}
 .red-card.sel .red-ck{background:var(--gold);color:var(--navy)}
 
-.btn-cotiza{display:inline-block;margin:0 auto;padding:16px 52px;background:var(--gold);color:var(--navy);font-weight:700;font-size:17px;border-radius:100px;border:none;cursor:pointer;font-family:'Poppins',sans-serif;transition:transform .2s,box-shadow .2s}
-.btn-cotiza:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(219,170,89,.35)}
-.quick-cta{padding:44px 0 0}
-.quick-cta .wrap{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
-.btn-wa{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:100px;border:1.5px solid var(--line);color:var(--navy);font-weight:600;font-size:15px;text-decoration:none;font-family:'Poppins',sans-serif;transition:border-color .2s,background .2s}
-.btn-wa svg{width:20px;height:20px;color:#25D366}
-.btn-wa:hover{border-color:#25D366;background:#f4fdf7}
-.cov-sec{padding:44px 0 56px}
-.cov-lead{max-width:680px;margin:0 auto 30px;text-align:center;font-size:18px;color:var(--navy);font-weight:500;line-height:1.5}
+.hero-cta-row{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:26px;position:relative;z-index:1}
+.btn-cotiza-hero{display:inline-flex;align-items:center;gap:10px;padding:17px 36px;background:var(--gold);color:var(--navy);font-weight:700;font-size:16.5px;border-radius:100px;border:none;cursor:pointer;font-family:'Poppins',sans-serif;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 22px rgba(219,170,89,.4)}
+.btn-cotiza-hero svg{width:22px;height:22px}
+.btn-cotiza-hero:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(219,170,89,.5)}
+.btn-wa-hero{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;border-radius:100px;background:#fff;border:1.5px solid #fff;color:var(--navy);font-weight:600;font-size:16px;text-decoration:none;font-family:'Poppins',sans-serif;transition:transform .2s,box-shadow .2s}
+.btn-wa-hero svg{width:22px;height:22px;color:#25D366}
+.btn-wa-hero:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
+.cov-lead{max-width:680px;margin:14px auto 34px;text-align:center;font-size:18px;color:var(--navy);font-weight:500;line-height:1.5}
 .cov-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:16px 40px;max-width:820px;margin:0 auto}
 .cov-list li{display:flex;align-items:flex-start;gap:12px;font-size:15.5px;color:var(--navy);line-height:1.4}
 .cov-ck{width:20px;height:20px;border-radius:50%;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
-@media(max-width:720px){.cov-list{grid-template-columns:1fr}.cov-lead{font-size:16px}.btn-cotiza{padding:14px 40px;font-size:15px}.btn-wa{padding:13px 24px;font-size:14px}}
-.btn-cotiza.on{opacity:1;pointer-events:auto}
+@media(max-width:720px){.cov-list{grid-template-columns:1fr}.cov-lead{font-size:16px}.btn-cotiza-hero{padding:14px 28px;font-size:15px}.btn-wa-hero{padding:13px 24px;font-size:14px}.hero-cta-row{margin-top:18px}}
 .btn-cotiza.on:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(219,170,89,.4)}
 
 /* BENEFICIOS */
@@ -274,24 +272,27 @@
     <h1>Protege a toda tu familia con <em>una sola póliza</em></h1>
     <p>Mientras más integrantes agregas, más ahorras. Hasta 40% de descuento por cada familiar.</p>
     </div>
+    <div class="hero-cta-row">
+      <button class="btn-cotiza-hero" onclick="abrirModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/><path d="M9 12l2 2 4-4"/></svg>
+        Cotizar ahora
+      </button>
+      <a class="btn-wa-hero" href="https://wa.me/593995915761?text=Hola,%20quiero%20cotizar%20un%20seguro%20de%20salud%20familiar">
+        <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.699 4.612 1.905 6.487L4 29l7.72-1.867A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 21.75c-2.02 0-3.897-.59-5.478-1.605l-.393-.246-4.583 1.108 1.132-4.464-.256-.406A9.72 9.72 0 0 1 5.25 15c0-5.937 4.813-10.75 10.751-10.75S26.75 9.063 26.75 15 21.939 24.75 16.001 24.75zm5.978-8.03c-.328-.164-1.937-.957-2.237-1.066-.3-.109-.518-.164-.737.164-.219.328-.845 1.066-1.036 1.285-.191.219-.382.246-.71.082-.328-.164-1.384-.51-2.637-1.628-.975-.87-1.633-1.944-1.824-2.272-.191-.328-.02-.505.144-.668.148-.147.328-.383.492-.574.164-.191.219-.328.328-.547.109-.219.055-.41-.027-.574-.082-.164-.737-1.775-1.01-2.43-.266-.64-.537-.553-.737-.563-.191-.009-.41-.011-.629-.011-.219 0-.574.082-.874.41-.3.328-1.147 1.121-1.147 2.734 0 1.613 1.174 3.172 1.338 3.391.164.219 2.31 3.527 5.598 4.946.782.338 1.392.54 1.868.691.785.25 1.499.215 2.064.13.63-.094 1.937-.792 2.21-1.557.273-.765.273-1.42.191-1.557-.082-.137-.3-.219-.628-.383z"/></svg>
+        Habla con nosotros
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- SELECTOR DE RED — inmediato bajo el hero -->
-<!-- CTA RÁPIDO + ACCESO A COBERTURA + BENEFICIOS -->
-<section class="quick-cta">
-  <div class="wrap" style="text-align:center">
-    <button class="btn-cotiza" onclick="abrirModal()">Cotizar ahora</button>
-    <a class="btn-wa" href="https://wa.me/593995915761?text=Hola,%20quiero%20cotizar%20un%20seguro%20de%20salud%20familiar">
-      <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.699 4.612 1.905 6.487L4 29l7.72-1.867A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 21.75c-2.02 0-3.897-.59-5.478-1.605l-.393-.246-4.583 1.108 1.132-4.464-.256-.406A9.72 9.72 0 0 1 5.25 15c0-5.937 4.813-10.75 10.751-10.75S26.75 9.063 26.75 15 21.939 24.75 16.001 24.75zm5.978-8.03c-.328-.164-1.937-.957-2.237-1.066-.3-.109-.518-.164-.737.164-.219.328-.845 1.066-1.036 1.285-.191.219-.382.246-.71.082-.328-.164-1.384-.51-2.637-1.628-.975-.87-1.633-1.944-1.824-2.272-.191-.328-.02-.505.144-.668.148-.147.328-.383.492-.574.164-.191.219-.328.328-.547.109-.219.055-.41-.027-.574-.082-.164-.737-1.775-1.01-2.43-.266-.64-.537-.553-.737-.563-.191-.009-.41-.011-.629-.011-.219 0-.574.082-.874.41-.3.328-1.147 1.121-1.147 2.734 0 1.613 1.174 3.172 1.338 3.391.164.219 2.31 3.527 5.598 4.946.782.338 1.392.54 1.868.691.785.25 1.499.215 2.064.13.63-.094 1.937-.792 2.21-1.557.273-.765.273-1.42.191-1.557-.082-.137-.3-.219-.628-.383z"/></svg>
-      Habla con nosotros
-    </a>
-  </div>
-</section>
-
-<section class="cov-sec">
+<!-- BENEFICIOS -->
+<section class="ben-sec">
   <div class="wrap">
-    <p class="cov-lead">El contar con un seguro médico te permite acceder a los mejores tratamientos y médicos a nivel local y mundial.</p>
+    <div style="text-align:center">
+      <div class="sec-eyebrow">Por qué elegir un plan familiar</div>
+      <h2 style="font-size:34px;color:var(--navy);margin-bottom:8px">Todo lo que incluye tu plan</h2>
+      <p class="cov-lead">El contar con un seguro médico te permite acceder a los mejores tratamientos y médicos a nivel local y mundial.</p>
+    </div>
     <ul class="cov-list">
       <li><span class="cov-ck">✓</span>Libre elección de médicos y hospitales</li>
       <li><span class="cov-ck">✓</span>Cobertura para enfermedades preexistentes</li>
@@ -306,62 +307,6 @@
     </ul>
   </div>
 </section>
-
-<!-- BENEFICIOS -->
-<section class="ben-sec">
-  <div class="wrap">
-    <div style="text-align:center">
-      <div class="sec-eyebrow">Por qué elegir un plan familiar</div>
-      <h2 style="font-size:34px;color:var(--navy);margin-bottom:8px">Todo lo que incluye tu plan</h2>
-      <p style="color:var(--slate);font-size:16px">Un solo contrato, protección completa para todos.</p>
-    </div>
-    <div class="ben-grid">
-      <div class="ben-card">
-        <div class="ben-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <h4>Maternidad y Pediatría</h4>
-        <p>Controles de embarazo, parto y atención pediátrica para tus hijos incluidos según el plan.</p>
-      </div>
-      <div class="ben-card">
-        <div class="ben-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg>
-        </div>
-        <h4>Hospitalización al 100%</h4>
-        <p>Cirugías, cuidados intensivos y hospitalizaciones cubiertas al 100% superado el deducible.</p>
-      </div>
-      <div class="ben-card">
-        <div class="ben-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        </div>
-        <h4>Hasta 40% de descuento</h4>
-        <p>Humana te premia por asegurar a toda tu familia. Más integrantes, mayor descuento en la prima.</p>
-      </div>
-      <div class="ben-card">
-        <div class="ben-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h4>Seguro de Vida incluido</h4>
-        <p>Hasta $5.000 de respaldo para titulares y dependientes de 18 a 64 años en caso de fallecimiento.</p>
-      </div>
-      <div class="ben-card">
-        <div class="ben-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-        </div>
-        <h4>Telemedicina 24/7</h4>
-        <p>Atención médica virtual para toda la familia, sin filas ni desplazamientos. Siempre disponible.</p>
-      </div>
-      <div class="ben-card">
-        <div class="ben-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-        </div>
-        <h4>Asistencia en Viajes</h4>
-        <p>Cobertura de hasta 30 días en el exterior al año, disponible para todo tu núcleo familiar.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <!-- MODAL -->
 <div class="modal-bg" id="modalBg">
