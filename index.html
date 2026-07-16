@@ -202,6 +202,21 @@
   .testi p.q{font-family:'Poppins',sans-serif;font-size:30px;font-style:italic;line-height:1.4;margin-bottom:28px;color:#fff}
   .testi .who{font-size:15px;color:var(--gold-soft)}
   .testi .who b{color:#fff;display:block;font-size:16px}
+  .testi-rot{background:var(--navy);color:#fff;position:relative;overflow:hidden;padding:70px 0}
+  .testi-rot::before{content:"";position:absolute;top:-100px;right:-100px;width:320px;height:320px;background:var(--gold);opacity:.1;border-radius:50%}
+  .testi-rot-in{max-width:800px;margin:0 auto;text-align:center;position:relative}
+  .testi-rot .quote-mark{font-family:'Poppins',sans-serif;font-size:80px;color:var(--gold);line-height:.5;margin-bottom:10px}
+  .testi-slides{position:relative;min-height:160px}
+  .testi-slide{display:none;animation:testiIn .5s ease}
+  .testi-slide.active{display:block}
+  @keyframes testiIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  .testi-slide .q{font-family:'Poppins',sans-serif;font-size:26px;font-style:italic;line-height:1.4;margin-bottom:24px;color:#fff}
+  .testi-slide .who{font-size:15px;color:var(--gold-soft)}
+  .testi-slide .who b{color:#fff;display:block;font-size:16px}
+  .testi-dots{display:flex;justify-content:center;gap:10px;margin-top:8px}
+  .testi-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.25);border:none;padding:0;cursor:pointer;transition:background .25s,transform .25s}
+  .testi-dot.active{background:var(--gold);transform:scale(1.25)}
+  @media(max-width:720px){.testi-slide .q{font-size:19px}.testi-rot{padding:50px 0}}
 
   /* PARTNERS */
   .partners{text-align:center;padding:64px 0;border-top:1px solid var(--line)}
@@ -301,6 +316,57 @@
   </div>
 </header>
 
+<!-- ══════════ TESTIMONIOS ROTATIVOS (contenido de ejemplo — reemplazar con testimonios reales) ══════════ -->
+<section class="sec testi-rot">
+  <div class="wrap testi-rot-in">
+    <div class="quote-mark">"</div>
+    <div class="testi-slides">
+      <div class="testi-slide active">
+        <p class="q">Me sentí acompañada en todo momento. No fue vender y desaparecer — estuvieron ahí justo cuando más los necesité.</p>
+        <div class="who"><b>María Fernanda C.</b>Cliente de Priority Salud</div>
+      </div>
+      <div class="testi-slide">
+        <p class="q">Cotizaron mi auto con 5 aseguradoras distintas y me explicaron cada opción sin apuro. Terminé pagando menos de lo que esperaba.</p>
+        <div class="who"><b>Andrés R.</b>Cliente de Priority Vehículo</div>
+      </div>
+      <div class="testi-slide">
+        <p class="q">Tuve un reclamo médico complicado y Priority se encargó de todo el papeleo con la aseguradora. Cero estrés de mi parte.</p>
+        <div class="who"><b>Gabriela M.</b>Cliente de Priority Salud</div>
+      </div>
+      <div class="testi-slide">
+        <p class="q">Lo que más valoro es que me responden rápido por WhatsApp, no como otros brokers que solo aparecen a fin de mes.</p>
+        <div class="who"><b>Carlos V.</b>Cliente de Priority Hogar</div>
+      </div>
+    </div>
+    <div class="testi-dots">
+      <button class="testi-dot active" data-i="0" aria-label="Testimonio 1"></button>
+      <button class="testi-dot" data-i="1" aria-label="Testimonio 2"></button>
+      <button class="testi-dot" data-i="2" aria-label="Testimonio 3"></button>
+      <button class="testi-dot" data-i="3" aria-label="Testimonio 4"></button>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var slides = document.querySelectorAll('.testi-slide');
+  var dots = document.querySelectorAll('.testi-dot');
+  var i = 0, timer;
+  function show(n){
+    slides[i].classList.remove('active');
+    dots[i].classList.remove('active');
+    i = (n + slides.length) % slides.length;
+    slides[i].classList.add('active');
+    dots[i].classList.add('active');
+  }
+  function next(){ show(i + 1); }
+  function restart(){ clearInterval(timer); timer = setInterval(next, 6000); }
+  dots.forEach(function(d){
+    d.addEventListener('click', function(){ show(parseInt(d.dataset.i, 10)); restart(); });
+  });
+  restart();
+})();
+</script>
+
 <section class="creds">
   <div class="wrap">
     <div class="creds-in">
@@ -346,14 +412,6 @@
       <div class="val"><div class="vic"><svg viewBox="0 0 64 64"><circle class="st" cx="28" cy="28" r="14"/><path class="ac" d="M38 38L50 50"/></svg></div><h4>Atención al detalle</h4><p>Gestionamos cada documento para que nada se caiga.</p></div>
       <div class="val"><div class="vic"><svg viewBox="0 0 64 64"><path class="st" d="M32 12L38 24L51 26L42 36L44 49L32 43L20 49L22 36L13 26L26 24Z"/><circle class="acf" cx="32" cy="31" r="5"/></svg></div><h4>Casos extraordinarios</h4><p>Resolvemos lo que otros brokers no quieren ni tocar.</p></div>
     </div>
-  </div>
-</section>
-
-<section class="sec testi">
-  <div class="wrap testi-in">
-    <div class="quote-mark">"</div>
-    <p class="q">Me sentí acompañada en todo momento. No fue vender y desaparecer — estuvieron ahí justo cuando más los necesité.</p>
-    <div class="who"><b>María Fernanda C.</b>Cliente de Priority Salud</div>
   </div>
 </section>
 
