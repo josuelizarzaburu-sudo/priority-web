@@ -61,14 +61,20 @@
   .portrait-ph{width:180px;height:180px;border-radius:50%;margin:0 auto 22px;background:linear-gradient(160deg,var(--navy),var(--navy-2));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:52px;font-weight:700;letter-spacing:1px;border:4px solid #fff;box-shadow:0 12px 30px rgba(12,32,87,.22)}
   .portrait-card h4{font-size:19px;color:var(--navy);margin-bottom:4px}
   .portrait-card .role{font-size:14px;color:var(--gold-2);font-weight:600;margin-bottom:14px}
-  .portrait-card .note{font-size:13px;color:var(--slate);background:#fff;border:1px dashed var(--line);border-radius:12px;padding:10px 14px}
+  .portrait-card .note{font-size:13px;color:var(--slate);background:#fff;border:1px dashed var(--line);border-radius:12px;padding:10px 14px;display:flex;align-items:center;justify-content:center;gap:8px}
+  .portrait-card .note svg{width:16px;height:16px;flex-shrink:0}
+  .portrait-card .note svg .st{fill:none;stroke:var(--slate);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
   @media(max-width:820px){.historia-grid{grid-template-columns:1fr}.historia{padding:56px 0}.historia h2{font-size:28px}.portrait-card{max-width:340px;margin:0 auto}}
 
   /* MISION / VISION / OFERTA */
   .mvo{background:var(--mist);padding:80px 0}
   .mvo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
   .mvo-card{background:#fff;border-radius:22px;padding:34px 30px;border:1px solid var(--line);box-shadow:0 14px 36px rgba(12,32,87,.06)}
-  .mvo-card .ic{width:52px;height:52px;border-radius:14px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:24px}
+  .mvo-card .ic{width:52px;height:52px;border-radius:14px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .mvo-card .ic svg{width:26px;height:26px;overflow:visible}
+  .mvo-card .ic svg .st{fill:none;stroke:#fff;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+  .mvo-card .ic svg .ac{fill:none;stroke:var(--gold);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+  .mvo-card .ic svg .acf{fill:var(--gold)}
   .mvo-card h3{font-size:20px;color:var(--navy);margin-bottom:12px}
   .mvo-card p{font-size:15px;color:var(--slate)}
   @media(max-width:820px){.mvo-grid{grid-template-columns:1fr}.mvo{padding:52px 0}}
@@ -80,7 +86,11 @@
   .val-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
   .val-card{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:30px 20px;transition:transform .25s,box-shadow .25s}
   .val-card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(12,32,87,.1)}
-  .val-card .ic{width:56px;height:56px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:24px}
+  .val-card .ic{width:56px;height:56px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+  .val-card .ic svg{width:26px;height:26px;overflow:visible}
+  .val-card .ic svg .st{fill:none;stroke:#fff;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+  .val-card .ic svg .ac{fill:none;stroke:var(--gold);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+  .val-card .ic svg .acf{fill:var(--gold)}
   .val-card h4{font-size:17px;color:var(--navy)}
   @media(max-width:820px){.val-grid{grid-template-columns:1fr 1fr}.valores{padding:56px 0}.valores h2{font-size:28px}}
   @media(max-width:480px){.val-grid{grid-template-columns:1fr}}
@@ -100,7 +110,10 @@
   .equipo .sub{font-size:16.5px;color:var(--slate);max-width:600px;margin:0 auto}
   .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
   .team-card{background:#fff;border-radius:22px;padding:32px 26px;text-align:center;border:1px solid var(--line);box-shadow:0 14px 34px rgba(12,32,87,.06)}
-  .team-ph{width:104px;height:104px;border-radius:50%;margin:0 auto 18px;background:linear-gradient(160deg,var(--navy),var(--navy-2));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:30px;font-weight:700;border:3px solid var(--cream)}
+  .team-ph{width:104px;height:104px;border-radius:50%;margin:0 auto 18px;background:linear-gradient(160deg,var(--navy),var(--navy-2));display:flex;align-items:center;justify-content:center;border:3px solid var(--cream)}
+  .team-ph svg{width:44px;height:44px;overflow:visible}
+  .team-ph svg .st{fill:none;stroke:var(--gold);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+  .team-ph.initials{font-size:30px;font-weight:700;color:var(--gold)}
   .team-card h4{font-size:17px;color:var(--navy);margin-bottom:4px}
   .team-card .role{font-size:13.5px;color:var(--gold-2);font-weight:600;margin-bottom:10px}
   .team-card .desc{font-size:13.5px;color:var(--slate)}
@@ -191,7 +204,7 @@
       <div class="portrait-ph">RA</div>
       <h4>Roxana Avilés</h4>
       <div class="role">Fundadora &amp; Directora</div>
-      <div class="note">📷 Foto próximamente</div>
+      <div class="note"><svg viewBox="0 0 64 64"><path class="st" d="M10 22C10 19 12 17 15 17H21L24 12H40L43 17H49C52 17 54 19 54 22V46C54 49 52 51 49 51H15C12 51 10 49 10 46Z"/><circle class="st" cx="32" cy="34" r="10"/></svg> Foto próximamente</div>
     </div>
   </div>
 </section>
@@ -200,17 +213,17 @@
 <section class="mvo">
   <div class="wrap mvo-grid">
     <div class="mvo-card">
-      <div class="ic">🎯</div>
+      <div class="ic"><svg viewBox="0 0 64 64"><circle class="st" cx="32" cy="32" r="20"/><circle class="st" cx="32" cy="32" r="11"/><circle class="acf" cx="32" cy="32" r="4"/></svg></div>
       <h3>Nuestra Misión</h3>
       <p>Priorizamos los intereses de nuestros asegurados a través de una atención integral, personalizada y eficiente, asesorándolos en las coberturas y servicios que contratan, para que tengan siempre la confianza y tranquilidad de estar respaldados en todo momento.</p>
     </div>
     <div class="mvo-card">
-      <div class="ic">🔭</div>
+      <div class="ic"><svg viewBox="0 0 64 64"><path class="st" d="M6 32C6 32 16 18 32 18C48 18 58 32 58 32C58 32 48 46 32 46C16 46 6 32 6 32Z"/><circle class="acf" cx="32" cy="32" r="7"/></svg></div>
       <h3>Nuestra Visión</h3>
       <p>Que nuestros asegurados se sientan tranquilos y protegidos en todo momento, sabiendo que cuentan con un equipo que vela por sus intereses antes, durante y después de cada proceso.</p>
     </div>
     <div class="mvo-card">
-      <div class="ic">🤝</div>
+      <div class="ic"><svg viewBox="0 0 64 64"><path class="st" d="M32 12L50 20V32C50 43 42 50 32 53C22 50 14 43 14 32V20Z"/><path class="ac" d="M25 32L30 37L40 26"/></svg></div>
       <h3>Oferta de Valor</h3>
       <p>Anticipamos las necesidades de nuestros asegurados con acompañamiento personalizado las 24 horas del día, los 365 días del año, y asesoría oportuna en cada trámite, con nuestras herramientas digitales y servicio puerta a puerta.</p>
     </div>
@@ -224,10 +237,10 @@
     <h2>Nuestros Valores</h2>
     <p class="sub">Priorizamos a las personas ante los procesos.</p>
     <div class="val-grid">
-      <div class="val-card"><div class="ic">💛</div><h4>Empatía</h4></div>
-      <div class="val-card"><div class="ic">🤝</div><h4>Compromiso</h4></div>
-      <div class="val-card"><div class="ic">✅</div><h4>Honestidad</h4></div>
-      <div class="val-card"><div class="ic">🛎️</div><h4>Servicio</h4></div>
+      <div class="val-card"><div class="ic"><svg viewBox="0 0 64 64"><path class="st" d="M14 40C14 40 10 30 18 28C24 26.5 26 34 26 34"/><path class="ac" d="M44 52C44 52 30 44 30 33C30 27 34 24 38 24C41 24 43 26 44 29C45 26 47 24 50 24C54 24 58 27 58 33C58 44 44 52 44 52Z"/></svg></div><h4>Empatía</h4></div>
+      <div class="val-card"><div class="ic"><svg viewBox="0 0 64 64"><path class="st" d="M18 34C18 34 14 24 22 20C28 17 32 22 32 22C32 22 36 17 42 20C50 24 46 34 46 34"/><path class="ac" d="M20 34L44 34L38 46H26Z"/></svg></div><h4>Compromiso</h4></div>
+      <div class="val-card"><div class="ic"><svg viewBox="0 0 64 64"><path class="st" d="M6 32C6 32 16 18 32 18C48 18 58 32 58 32C58 32 48 46 32 46C16 46 6 32 6 32Z"/><circle class="acf" cx="32" cy="32" r="7"/></svg></div><h4>Honestidad</h4></div>
+      <div class="val-card"><div class="ic"><svg viewBox="0 0 64 64"><circle class="st" cx="28" cy="28" r="14"/><path class="ac" d="M38 38L50 50"/></svg></div><h4>Servicio</h4></div>
     </div>
   </div>
 </section>
@@ -250,21 +263,21 @@
     </div>
     <div class="team-grid">
       <div class="team-card">
-        <div class="team-ph">RA</div>
+        <div class="team-ph initials">RA</div>
         <h4>Roxana Avilés</h4>
         <div class="role">Fundadora &amp; Directora</div>
         <div class="desc">Más de 20 años de experiencia en la industria aseguradora.</div>
       </div>
       <div class="team-card">
         <!-- Placeholder genérico: reemplazar cuando se defina el asesor -->
-        <div class="team-ph">👤</div>
+        <div class="team-ph"><svg viewBox="0 0 64 64"><circle class="st" cx="32" cy="24" r="11"/><path class="st" d="M12 52C12 40 20 34 32 34C44 34 52 40 52 52"/></svg></div>
         <h4>Asesor/a Comercial</h4>
         <div class="role">Equipo Priority</div>
         <div class="desc">Te acompaña en la cotización, contratación y trámites de tu seguro.</div>
       </div>
       <div class="team-card">
         <!-- Placeholder genérico: reemplazar cuando se defina el asesor -->
-        <div class="team-ph">👤</div>
+        <div class="team-ph"><svg viewBox="0 0 64 64"><circle class="st" cx="32" cy="24" r="11"/><path class="st" d="M12 52C12 40 20 34 32 34C44 34 52 40 52 52"/></svg></div>
         <h4>Asesor/a de Servicio</h4>
         <div class="role">Equipo Priority</div>
         <div class="desc">Gestiona siniestros y renovaciones para que no tengas que preocuparte.</div>
