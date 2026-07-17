@@ -191,10 +191,12 @@
 .btn-wa-hero{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;border-radius:100px;background:#fff;border:1.5px solid #fff;color:var(--navy);font-weight:600;font-size:16px;text-decoration:none;font-family:'Poppins',sans-serif;transition:transform .2s,box-shadow .2s}
 .btn-wa-hero svg{width:22px;height:22px;color:#25D366}
 .btn-wa-hero:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
-.cov-lead{max-width:680px;margin:14px auto 34px;text-align:center;font-size:18px;color:var(--navy);font-weight:500;line-height:1.5}
-.cov-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:16px 40px;max-width:820px;margin:0 auto}
-.cov-list li{display:flex;align-items:flex-start;gap:12px;font-size:15.5px;color:var(--navy);line-height:1.4}
-.cov-ck{width:20px;height:20px;border-radius:50%;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
+.cov-lead{max-width:680px;margin:14px auto 4px;text-align:center;font-size:18px;color:var(--navy);font-weight:500;line-height:1.5}
+.cov-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:900px;margin:36px auto 0}
+.cov-list li{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;font-size:15px;color:var(--navy);font-weight:600;line-height:1.35;text-align:left;transition:transform .22s,box-shadow .22s,border-color .22s}
+.cov-list li:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(12,32,87,.1);border-color:var(--gold)}
+.cov-ck{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#f0d9ad);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;flex-shrink:0;box-shadow:0 4px 10px rgba(219,170,89,.35)}
+@media(max-width:600px){.cov-list{grid-template-columns:1fr}}
 @media(max-width:720px){.cov-list{grid-template-columns:1fr}.cov-lead{font-size:16px}.btn-cotiza-hero{padding:14px 28px;font-size:15px}.btn-wa-hero{padding:13px 24px;font-size:14px}.hero-cta-row{margin-top:18px}}
 .btn-cotiza.on:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(219,170,89,.4)}
 
@@ -290,8 +292,8 @@
   <div class="wrap">
     <div style="text-align:center">
       <div class="sec-eyebrow">Por qué elegir un plan familiar</div>
-      <h2 style="font-size:34px;color:var(--navy);margin-bottom:8px">Todo lo que incluye tu plan</h2>
       <p class="cov-lead">El contar con un seguro médico te permite acceder a los mejores tratamientos y médicos a nivel local y mundial.</p>
+      <h2 style="font-size:34px;color:var(--navy);margin:0 0 8px">Todo lo que incluye tu plan</h2>
     </div>
     <ul class="cov-list">
       <li><span class="cov-ck">✓</span>Libre elección de médicos y hospitales</li>
