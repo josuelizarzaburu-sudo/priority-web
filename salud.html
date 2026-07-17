@@ -248,9 +248,10 @@
   .ci-flip-inner{position:relative;width:100%;height:100%;min-height:340px;transition:transform .6s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;box-shadow:0 16px 40px rgba(12,32,87,.2);border-radius:20px}
   .ci-flip:hover .ci-flip-inner,.ci-flip.flipped .ci-flip-inner{transform:rotateY(180deg)}
   .ci-face{position:absolute;inset:0;border-radius:20px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;justify-content:flex-end}
-  .ci-front{background:center/cover no-repeat}
-  .ci-front h2{font-size:16px;color:#fff;margin-bottom:6px;line-height:1.3;text-shadow:0 2px 10px rgba(0,0,0,.8)}
-  .ci-front p{font-size:13px;font-weight:500;color:#fff;margin-bottom:0;line-height:1.5;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+  .ci-front{background:center/cover no-repeat;justify-content:center;align-items:center;text-align:center}
+  .ci-front .ci-content{padding:20px}
+  .ci-front h2{font-size:26px;color:#fff;margin-bottom:8px;line-height:1.25;text-shadow:0 2px 10px rgba(0,0,0,.8)}
+  .ci-front p{font-size:16px;font-weight:600;color:#fff;margin-bottom:0;line-height:1.4;text-shadow:0 1px 6px rgba(0,0,0,.7)}
   .ci-back{transform:rotateY(180deg);background:linear-gradient(160deg,var(--navy),var(--navy-2));justify-content:center;align-items:center;text-align:center;padding:28px}
   .ci-back .ci-content{padding:0}
   .ci-back-emoji{font-size:42px;margin-bottom:12px}
