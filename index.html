@@ -225,11 +225,15 @@
   @media(max-width:720px){.testi-slide .q{font-size:19px}.testi-rot{padding:28px 0}}
 
   /* PARTNERS */
-  .partners{text-align:center;padding:64px 0;border-top:1px solid var(--line)}
-  .partners .lbl{font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--slate);margin-bottom:26px}
-  .partners .row{display:flex;justify-content:center;align-items:center;gap:38px;flex-wrap:wrap}
-  .partners .row span{font-family:'Poppins',sans-serif;font-size:22px;font-weight:600;color:var(--navy);opacity:.5;transition:opacity .2s}
+  .partners{text-align:center;padding:64px 0;border-top:1px solid var(--line);overflow:hidden}
+  .partners .lbl{font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--slate);margin-bottom:32px}
+  .partners-track{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%)}
+  .partners .row{display:flex;align-items:center;gap:56px;flex-wrap:nowrap;width:max-content;animation:partnersScroll 34s linear infinite}
+  .partners .row span{font-family:'Poppins',sans-serif;font-size:30px;font-weight:700;color:var(--navy);opacity:.55;transition:opacity .2s;white-space:nowrap}
   .partners .row span:hover{opacity:1}
+  @keyframes partnersScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(max-width:720px){.partners .row span{font-size:22px}.partners .row{gap:36px;animation-duration:26s}}
+  .partners-track:hover .row{animation-play-state:paused}
 
   /* CTA */
   .cta{background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;text-align:center;padding:96px 0;position:relative;overflow:hidden}
@@ -422,8 +426,10 @@
 <div class="partners">
   <div class="wrap">
     <div class="lbl">Trabajamos con las mejores aseguradoras</div>
+  </div>
+  <div class="partners-track">
     <div class="row">
-      <span>Saludsa</span><span>Liberty</span><span>BMI</span><span>Humana</span><span>Panamerican</span><span>VUMI</span><span>Confiamed</span>
+      <span>BMI</span><span>Bupa</span><span>VUMI</span><span>Zurich</span><span>Humana</span><span>Pan American Life</span><span>Best Doctors</span><span>Blue Card</span><span>Confiamed</span><span>Assist Card</span><span>AIG</span><span>Latina Seguros</span><span>Saludsa</span><span>Sweaden</span><span>Ecua Sanitas</span><span>Seguros Atlántida</span><span>BMI</span><span>Bupa</span><span>VUMI</span><span>Zurich</span><span>Humana</span><span>Pan American Life</span><span>Best Doctors</span><span>Blue Card</span><span>Confiamed</span><span>Assist Card</span><span>AIG</span><span>Latina Seguros</span><span>Saludsa</span><span>Sweaden</span><span>Ecua Sanitas</span><span>Seguros Atlántida</span>
     </div>
   </div>
 </div>
