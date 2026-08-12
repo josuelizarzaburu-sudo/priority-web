@@ -137,6 +137,22 @@
   /* Vitality card — mantener el estilo original pero mismo alto */
   .path.premia{border-radius:20px}
 
+  /* Texto justificado solo en pantallas anchas. En movil el justificado abre
+     "rios" de espacio en blanco entre palabras y se lee peor, asi que ahi se
+     deja alineado a la izquierda. Se excluyen los bloques centrados. */
+  @media(min-width:721px){
+    .historia p, .valor-card p, .mv-card p, .team-card p,
+    .bloque-tx p, .card p, .acomp p, .intro p, .contenido p{
+      text-align:justify; text-justify:inter-word; hyphens:auto;
+    }
+    .hero-tx p, .equipo-head p, .cta-final p, .banner-acomp p,
+    .valores > .wrap > p, .foot-bottom, .portrait-card p{
+      text-align:center;
+    }
+  }
+  /* Aviso de proteccion de datos, mismo texto que el comparativo del CRM. */
+  .aviso-datos{border-top:1px solid rgba(255,255,255,.12);padding-top:18px;margin-bottom:18px;font-size:11.5px;line-height:1.7;text-align:center;color:rgba(255,255,255,.55)}
+  .aviso-datos a{color:rgba(255,255,255,.8);text-decoration:underline}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -341,6 +357,7 @@
       <div><h5>Seguros</h5><ul><li><a href="#">Salud</a></li><li><a href="#">Vehículo</a></li><li><a href="#">Hogar</a></li><li><a href="#">Vida</a></li></ul></div>
       <div><h5>Contacto</h5><ul><li><a href="#">WhatsApp</a></li><li><a href="#">info@priority.ec</a></li><li><a href="#">Quito, Ecuador</a></li></ul></div>
     </div>
+    <div class="aviso-datos">🔐 En SEGUROS IDEAL ASESORES PRODUCTORES DE SEGUROS SEGUROSIDEAL CIA. LTDA. nos preocupamos por tu seguridad: tus datos personales se tratan conforme a la Ley Orgánica de Protección de Datos Personales del Ecuador. Conoce más aquí 👉 <a href="politicas/segurosideal.html">Política de tratamiento de datos personales</a></div>
     <div class="foot-bottom">© 2026 Priority Asesores de Seguros. Todos los derechos reservados.</div>
   </div>
 </footer>

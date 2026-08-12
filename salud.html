@@ -153,6 +153,19 @@
   /* Vitality card — mantener el estilo original pero mismo alto */
   .path.premia{border-radius:20px}
 
+  /* Texto justificado solo en pantallas anchas. En movil el justificado abre
+     "rios" de espacio en blanco entre palabras y se lee peor, asi que ahi se
+     deja alineado a la izquierda. Se excluyen los bloques centrados. */
+  @media(min-width:721px){
+    .historia p, .valor-card p, .mv-card p, .team-card p,
+    .bloque-tx p, .card p, .acomp p, .intro p, .contenido p{
+      text-align:justify; text-justify:inter-word; hyphens:auto;
+    }
+    .hero-tx p, .equipo-head p, .cta-final p, .banner-acomp p,
+    .valores > .wrap > p, .foot-bottom, .portrait-card p{
+      text-align:center;
+    }
+  }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
