@@ -2,8 +2,21 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/salud", "destination": "/salud.html" },
-    { "source": "/salud/premia", "destination": "/salud-premia.html" },
-    { "source": "/salud/tradicional", "destination": "/salud-tradicional.html" }
+    {
+      "source": "/salud",
+      "destination": "/salud.html"
+    },
+    {
+      "source": "/salud/premia",
+      "destination": "/salud-premia.html"
+    },
+    {
+      "source": "/salud/tradicional",
+      "destination": "/salud-tradicional.html"
+    },
+    {
+      "source": "/discovery",
+      "destination": "/polizas/discovery.html"
+    }
   ]
 }

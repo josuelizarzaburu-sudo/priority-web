@@ -28,6 +28,14 @@
   .hero .anio{display:inline-block;margin-top:18px;border:1px solid rgba(219,170,89,.45);color:var(--gold-soft);
               padding:5px 18px;border-radius:100px;font-size:13px}
 
+  /* ── Accesos rápidos ── */
+  .atajos{background:var(--mist);border-bottom:1px solid var(--line);padding:14px 0}
+  .atajos .wrap{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .atajos a{background:#fff;border:1px solid var(--line);border-radius:100px;padding:9px 18px;
+            font-size:14px;text-decoration:none;color:var(--navy);font-weight:500;white-space:nowrap}
+  .atajos a:hover{border-color:var(--gold)}
+  .atajos a.urgente{background:var(--navy);color:#fff;border-color:var(--navy)}
+
   /* ── Secciones ── */
   section{padding:44px 0;border-bottom:1px solid var(--line)}
   section:last-of-type{border-bottom:none}
@@ -125,7 +133,55 @@
   </div>
 </header>
 
+<!-- Accesos rápidos. Quien llega escaneando el QR del flyer ya vio ahí las
+     coberturas y los contactos; lo que no cabe en un flyer —y es lo que se
+     necesita con urgencia— es el procedimiento de emergencia. Por eso va
+     primero. -->
+<nav class="atajos">
+  <div class="wrap">
+    <a href="#emergencia" class="urgente">🚨 Qué hacer en una emergencia</a>
+    <a href="#red">🏥 Buscar hospital en convenio</a>
+    <a href="#coberturas">📋 Ver coberturas</a>
+    <a href="#contactos">📞 Contactos</a>
+  </div>
+</nav>
+
 <main class="wrap">
+
+  <section id="emergencia">
+    <h2>Qué hacer en caso de <span>emergencia</span></h2>
+    <p class="sub">Sigue estos pasos si ocurre un accidente.</p>
+
+    <div class="avisos" style="margin-bottom:26px">
+      <div class="aviso urgente">
+        <h4>Comunícate con Priority de inmediato</h4>
+        <p>
+          Apenas ocurra el accidente, avísanos para acompañarte durante la emergencia.
+          La atención médica u hospitalaria debe recibirse <strong>dentro de las primeras
+          24 horas</strong> de ocurrido el accidente.
+        </p>
+      </div>
+      <div class="aviso urgente">
+        <h4>Si no te atendieron en un hospital de convenio</h4>
+        <p>
+          El accidente debe reportarse a Priority en un máximo de
+          <strong>3 días calendario</strong>. Pasado ese plazo, los gastos no tendrán
+          cobertura bajo reembolso.
+        </p>
+      </div>
+    </div>
+
+    <ol class="pasos">
+      <li>Traslado al hospital en convenio más cercano.</li>
+      <li>Identificarse como asegurado de Palig (Pan American Life).</li>
+      <li>Presentar cédula de identidad.</li>
+      <li>Detallar la información del accidente. El hospital llena la hoja 008.</li>
+      <li>Una vez dada el alta, el hospital se comunica con el call center de Palig para validar la información.</li>
+      <li>Palig da la autorización del crédito hospitalario, en caso de que aplique.</li>
+      <li>El asegurado paga el deducible en el hospital, una vez autorizado el crédito y dada el alta.</li>
+      <li>Si la cuenta del hospital excede el límite de cobertura para gastos médicos, el asegurado cancela la diferencia.</li>
+    </ol>
+  </section>
 
   <section id="coberturas">
     <h2>Coberturas y <span>montos</span></h2>
@@ -174,41 +230,6 @@
       <p class="n">$20,00</p>
       <p class="d">Deducible por asegurado y por evento.</p>
     </div>
-  </section>
-
-  <section id="emergencia">
-    <h2>Qué hacer en caso de <span>emergencia</span></h2>
-    <p class="sub">Sigue estos pasos si ocurre un accidente.</p>
-
-    <div class="avisos" style="margin-bottom:26px">
-      <div class="aviso urgente">
-        <h4>Comunícate con Priority de inmediato</h4>
-        <p>
-          Apenas ocurra el accidente, avísanos para acompañarte durante la emergencia.
-          La atención médica u hospitalaria debe recibirse <strong>dentro de las primeras
-          24 horas</strong> de ocurrido el accidente.
-        </p>
-      </div>
-      <div class="aviso urgente">
-        <h4>Si no te atendieron en un hospital de convenio</h4>
-        <p>
-          El accidente debe reportarse a Priority en un máximo de
-          <strong>3 días calendario</strong>. Pasado ese plazo, los gastos no tendrán
-          cobertura bajo reembolso.
-        </p>
-      </div>
-    </div>
-
-    <ol class="pasos">
-      <li>Traslado al hospital en convenio más cercano.</li>
-      <li>Identificarse como asegurado de Palig (Pan American Life).</li>
-      <li>Presentar cédula de identidad.</li>
-      <li>Detallar la información del accidente. El hospital llena la hoja 008.</li>
-      <li>Una vez dada el alta, el hospital se comunica con el call center de Palig para validar la información.</li>
-      <li>Palig da la autorización del crédito hospitalario, en caso de que aplique.</li>
-      <li>El asegurado paga el deducible en el hospital, una vez autorizado el crédito y dada el alta.</li>
-      <li>Si la cuenta del hospital excede el límite de cobertura para gastos médicos, el asegurado cancela la diferencia.</li>
-    </ol>
   </section>
 
   <section id="red">
