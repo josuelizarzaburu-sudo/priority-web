@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priority — Póliza de Accidentes Personales · Discovery International School</title>
+<meta name="description" content="Coberturas, red médica y procedimiento en caso de emergencia de la póliza de accidentes personales de Discovery International School.">
+<!-- Esta página es para los padres de familia de un colegio, no para captar
+     clientes: no debe aparecer en buscadores ni competir con el sitio comercial. -->
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{
+    --navy:#0C2057;--navy-2:#0a1a48;--navy-deep:#081334;--gold:#DBAA59;--gold-2:#c9974a;--gold-soft:#E8C888;
+    --ink:#1A2238;--cream:#FBF8F2;--paper:#FFFFFF;--mist:#F5F6FA;--slate:#5A6478;--line:#E7E1D5;--green:#1B7A4B;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+  h1,h2,h3,h4{font-family:'Poppins',sans-serif;font-weight:600;line-height:1.15}
+  a{color:var(--navy)}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+
+  /* ── Encabezado ── */
+  .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;padding:48px 0 56px;text-align:center}
+  .hero .marca{font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  .hero h1{font-size:34px;color:#fff;margin-bottom:10px}
+  .hero .colegio{font-size:19px;color:var(--gold-soft);font-weight:500}
+  .hero .anio{display:inline-block;margin-top:18px;border:1px solid rgba(219,170,89,.45);color:var(--gold-soft);
+              padding:5px 18px;border-radius:100px;font-size:13px}
+
+  /* ── Secciones ── */
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+  h2{font-size:25px;color:var(--navy);margin-bottom:8px}
+  h2 span{color:var(--gold)}
+  .sub{color:var(--slate);font-size:15px;margin-bottom:24px}
+
+  /* ── Tabla de coberturas ──
+     En móvil una tabla de 3 columnas se sale de la pantalla, así que abajo se
+     reemplaza por tarjetas apiladas: es donde más se va a abrir esta página. */
+  .tabla{width:100%;border-collapse:collapse;font-size:15px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .tabla thead th{background:var(--navy);color:#fff;padding:13px 14px;font-weight:600;font-size:13.5px;text-align:center}
+  .tabla thead th:first-child{text-align:left}
+  .tabla td{padding:13px 14px;border-top:1px solid var(--line)}
+  .tabla td.monto{text-align:center;font-weight:600;color:var(--navy);white-space:nowrap}
+  .tabla tbody tr:nth-child(even){background:var(--mist)}
+
+  .cards-cob{display:none;gap:12px}
+  .card-cob{border:1px solid var(--line);border-radius:12px;padding:14px}
+  .card-cob .t{font-weight:600;color:var(--navy);margin-bottom:10px;font-size:15px}
+  .card-cob .fila{display:flex;justify-content:space-between;gap:10px;padding:6px 0;font-size:14px}
+  .card-cob .fila+.fila{border-top:1px solid var(--line)}
+  .card-cob .fila span:last-child{font-weight:600;color:var(--navy)}
+
+  /* ── Bloque destacado ── */
+  .destacado{background:var(--cream);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:20px 22px;margin-top:22px}
+  .destacado .n{font-size:30px;font-weight:700;color:var(--navy);line-height:1.1}
+  .destacado .d{color:var(--slate);font-size:14.5px;margin-top:4px}
+
+  /* ── Pasos ── */
+  ol.pasos{list-style:none;counter-reset:p;display:grid;gap:12px}
+  ol.pasos li{counter-increment:p;position:relative;padding:14px 16px 14px 56px;background:var(--mist);border-radius:12px;font-size:15px}
+  ol.pasos li::before{content:counter(p);position:absolute;left:16px;top:13px;width:26px;height:26px;border-radius:50%;
+                      background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;
+                      font-size:13px;font-weight:700}
+
+  /* ── Avisos ── */
+  .avisos{display:grid;gap:14px;margin-top:22px}
+  .aviso{border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:0 12px 12px 0;padding:16px 18px}
+  .aviso.urgente{border-left-color:#c0392b;background:#fdf5f4}
+  .aviso h4{font-size:15px;color:var(--navy);margin-bottom:5px}
+  .aviso p{font-size:14.5px;color:var(--slate)}
+  .aviso strong{color:var(--ink)}
+
+  /* ── Contactos ── */
+  .contactos{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+  .contacto{background:var(--navy);color:#fff;border-radius:14px;padding:22px}
+  .contacto .nom{font-size:18px;font-weight:600;color:var(--gold)}
+  .contacto .car{font-size:13px;color:rgba(255,255,255,.65);margin-bottom:14px}
+  .contacto a{display:flex;align-items:center;gap:9px;color:#fff;text-decoration:none;font-size:14.5px;padding:7px 0}
+  .contacto a:hover{color:var(--gold-soft)}
+  .contacto .ico{width:17px;text-align:center;opacity:.75}
+
+  .btn-gold{background:var(--gold);color:var(--navy);padding:14px 30px;border-radius:100px;text-decoration:none;
+            font-weight:700;font-size:15px;display:inline-block;transition:transform .2s}
+  .btn-gold:hover{transform:translateY(-2px)}
+
+  /* ── Pie ── */
+  footer{background:var(--navy-deep);color:rgba(255,255,255,.6);padding:34px 0;text-align:center;font-size:13px}
+  footer .logo{color:var(--gold);font-size:16px;letter-spacing:3px;font-weight:600;margin-bottom:6px}
+  footer .aviso-datos{border-top:1px solid rgba(255,255,255,.12);padding-top:18px;margin-top:22px;
+                      font-size:11.5px;line-height:1.7;color:rgba(255,255,255,.45)}
+  footer .aviso-datos a{color:rgba(255,255,255,.75)}
+
+  @media(max-width:720px){
+    .hero h1{font-size:26px}
+    .hero .colegio{font-size:17px}
+    h2{font-size:21px}
+    section{padding:34px 0}
+    .contactos{grid-template-columns:1fr}
+    /* La tabla se cambia por tarjetas: en un teléfono, 3 columnas obligan a
+       desplazarse en horizontal y se pierde de vista el nombre del beneficio. */
+    .tabla{display:none}
+    .cards-cob{display:grid}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="marca">Priority · Asesores de Seguros</p>
+    <h1>Póliza de Accidentes Personales</h1>
+    <p class="colegio">Discovery International School</p>
+    <p class="anio">Vigencia 2026 — 2027 · Pan American Life</p>
+    <!-- El PDF original queda disponible: algunos padres prefieren guardarlo o
+         imprimirlo, y es el documento formal. La landing es para consultarlo
+         rápido desde el teléfono. -->
+    <p style="margin-top:16px">
+      <a href="discovery-accidentes-2026.pdf" target="_blank" rel="noopener"
+         style="color:rgba(255,255,255,.75);font-size:13.5px;text-decoration:underline">
+        Descargar en PDF
+      </a>
+    </p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="coberturas">
+    <h2>Coberturas y <span>montos</span></h2>
+    <p class="sub">Montos asegurados para estudiantes, según dónde ocurra el accidente.</p>
+
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>Beneficio</th>
+          <th>Dentro de la institución</th>
+          <th>Fuera de la institución</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Muerte accidental</td><td class="monto">$5.000</td><td class="monto">$2.500</td></tr>
+        <tr><td>Desmembración accidental</td><td class="monto">$5.000</td><td class="monto">$2.500</td></tr>
+        <tr><td>Incapacidad total y permanente por accidente</td><td class="monto">$5.000</td><td class="monto">$2.500</td></tr>
+        <tr><td>Gastos médicos por accidente</td><td class="monto">$1.000</td><td class="monto">$500</td></tr>
+      </tbody>
+    </table>
+
+    <div class="cards-cob">
+      <div class="card-cob">
+        <p class="t">Muerte accidental</p>
+        <div class="fila"><span>Dentro de la institución</span><span>$5.000</span></div>
+        <div class="fila"><span>Fuera de la institución</span><span>$2.500</span></div>
+      </div>
+      <div class="card-cob">
+        <p class="t">Desmembración accidental</p>
+        <div class="fila"><span>Dentro de la institución</span><span>$5.000</span></div>
+        <div class="fila"><span>Fuera de la institución</span><span>$2.500</span></div>
+      </div>
+      <div class="card-cob">
+        <p class="t">Incapacidad total y permanente</p>
+        <div class="fila"><span>Dentro de la institución</span><span>$5.000</span></div>
+        <div class="fila"><span>Fuera de la institución</span><span>$2.500</span></div>
+      </div>
+      <div class="card-cob">
+        <p class="t">Gastos médicos por accidente</p>
+        <div class="fila"><span>Dentro de la institución</span><span>$1.000</span></div>
+        <div class="fila"><span>Fuera de la institución</span><span>$500</span></div>
+      </div>
+    </div>
+
+    <div class="destacado">
+      <p class="n">$20,00</p>
+      <p class="d">Deducible por asegurado y por evento.</p>
+    </div>
+  </section>
+
+  <section id="emergencia">
+    <h2>Qué hacer en caso de <span>emergencia</span></h2>
+    <p class="sub">Sigue estos pasos si ocurre un accidente.</p>
+
+    <div class="avisos" style="margin-bottom:26px">
+      <div class="aviso urgente">
+        <h4>Comunícate con Priority de inmediato</h4>
+        <p>
+          Apenas ocurra el accidente, avísanos para acompañarte durante la emergencia.
+          La atención médica u hospitalaria debe recibirse <strong>dentro de las primeras
+          24 horas</strong> de ocurrido el accidente.
+        </p>
+      </div>
+      <div class="aviso urgente">
+        <h4>Si no te atendieron en un hospital de convenio</h4>
+        <p>
+          El accidente debe reportarse a Priority en un máximo de
+          <strong>3 días calendario</strong>. Pasado ese plazo, los gastos no tendrán
+          cobertura bajo reembolso.
+        </p>
+      </div>
+    </div>
+
+    <ol class="pasos">
+      <li>Traslado al hospital en convenio más cercano.</li>
+      <li>Identificarse como asegurado de Palig (Pan American Life).</li>
+      <li>Presentar cédula de identidad.</li>
+      <li>Detallar la información del accidente. El hospital llena la hoja 008.</li>
+      <li>Una vez dada el alta, el hospital se comunica con el call center de Palig para validar la información.</li>
+      <li>Palig da la autorización del crédito hospitalario, en caso de que aplique.</li>
+      <li>El asegurado paga el deducible en el hospital, una vez autorizado el crédito y dada el alta.</li>
+      <li>Si la cuenta del hospital excede el límite de cobertura para gastos médicos, el asegurado cancela la diferencia.</li>
+    </ol>
+  </section>
+
+  <section id="red">
+    <h2>Red médica y <span>crédito hospitalario</span></h2>
+    <p class="sub">
+      El crédito hospitalario aplica en emergencias causadas por un accidente, y únicamente
+      en las clínicas y hospitales en convenio a nivel nacional.
+    </p>
+    <p style="margin-bottom:20px;font-size:15px;color:var(--slate)">
+      Consulta aquí los hospitales y clínicas disponibles cerca de ti:
+    </p>
+    <a class="btn-gold" href="https://palig.com/es/ec/busca-un-proveedor-medico/results" target="_blank" rel="noopener">
+      Buscar un proveedor médico
+    </a>
+
+    <div class="avisos">
+      <div class="aviso">
+        <h4>Reembolso de gastos médicos</h4>
+        <p>
+          Aplica siempre que los gastos sean consecuencia del accidente, presentando la
+          documentación completa de la atención.
+        </p>
+      </div>
+      <div class="aviso">
+        <h4>En caso de fallecimiento</h4>
+        <p>
+          Si el asegurado fallece a causa de un accidente, Palig indemniza a los
+          beneficiarios con la suma asegurada especificada en las condiciones particulares.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contactos">
+    <h2>Canales de <span>atención</span></h2>
+    <p class="sub">Estamos disponibles para acompañarte cuando lo necesites.</p>
+
+    <div class="contactos">
+      <div class="contacto">
+        <p class="nom">Carolina Terneus</p>
+        <p class="car">Ejecutiva de Cuenta</p>
+        <a href="tel:+593984802996"><span class="ico">📞</span> 098 480 2996</a>
+        <a href="mailto:serviciouio@priority.ec"><span class="ico">✉️</span> serviciouio@priority.ec</a>
+      </div>
+      <div class="contacto">
+        <p class="nom">Yessy Ojeda</p>
+        <p class="car">Jefe de Servicio al Cliente</p>
+        <a href="tel:+593987687910"><span class="ico">📞</span> 098 768 7910</a>
+        <a href="mailto:yojeda@priority.ec"><span class="ico">✉️</span> yojeda@priority.ec</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="logo">PRIORITY</p>
+    <p>Asesores de Seguros · Más de 20 años de experiencia</p>
+    <p style="margin-top:10px">Atención personalizada todo el año · Apoyo inmediato en emergencias</p>
+
+    <div class="aviso-datos">
+      🔐 En SEGUROS IDEAL ASESORES PRODUCTORES DE SEGUROS SEGUROSIDEAL CIA. LTDA. nos preocupamos
+      por tu seguridad: tus datos personales se tratan conforme a la Ley Orgánica de Protección de
+      Datos Personales del Ecuador. Conoce más aquí 👉
+      <a href="../politicas/segurosideal.html">Política de tratamiento de datos personales</a>
+    </div>
+  </div>
+</footer>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</body>
+</html>
