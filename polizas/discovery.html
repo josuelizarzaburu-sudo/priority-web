@@ -23,6 +23,7 @@
   /* ── Encabezado ── */
   .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;padding:48px 0 56px;text-align:center}
   .hero .marca{font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  .hero a.marca:hover{color:var(--gold-soft)}
   .hero h1{font-size:34px;color:#fff;margin-bottom:10px}
   .hero .colegio{font-size:19px;color:var(--gold-soft);font-weight:500}
   .hero .anio{display:inline-block;margin-top:18px;border:1px solid rgba(219,170,89,.45);color:var(--gold-soft);
@@ -117,7 +118,9 @@
 
 <header class="hero">
   <div class="wrap">
-    <p class="marca">Priority · Asesores de Seguros</p>
+    <a href="https://priority.ec" class="marca" style="text-decoration:none;display:inline-block">
+      Priority · Asesores de Seguros
+    </a>
     <h1>Póliza de Accidentes Personales</h1>
     <p class="colegio">Discovery International School</p>
     <p class="anio">Vigencia 2026 — 2027 · Pan American Life</p>
@@ -289,6 +292,15 @@
   <div class="wrap">
     <p class="logo">PRIORITY</p>
     <p>Asesores de Seguros · Más de 20 años de experiencia</p>
+    <!-- Quien llega aqui escaneando el QR no tiene forma de conocer el resto de
+         lo que hace Priority. El enlace le da salida hacia el sitio principal. -->
+    <p style="margin-top:16px">
+      <a href="https://priority.ec" style="color:var(--gold);text-decoration:none;
+         border:1px solid rgba(219,170,89,.4);padding:9px 22px;border-radius:100px;
+         font-size:13.5px;display:inline-block">
+        Conoce más sobre Priority →
+      </a>
+    </p>
     <p style="margin-top:10px">Atención personalizada todo el año · Apoyo inmediato en emergencias</p>
 
     <div class="aviso-datos">
